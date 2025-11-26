@@ -8,7 +8,7 @@ Built using HTML, CSS, JavaScript, and Leaflet.js.
 Play here:
 (Add your GitHub Pages URL once deployed)
 
-https://your-username.github.io/nitr-geoguess/
+[https://your-username.github.io/nitr-geoguess/](https://ankitanandnit.github.io/NITR_Guessr/)
 
 🗂️ Project Structure
 /images               → All campus photos used in the game
