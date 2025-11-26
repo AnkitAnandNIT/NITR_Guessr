@@ -2,42 +2,51 @@
   {
     "filename": "example1.jpg",
     "lat": 22.253164, 
-    "lng": 84.906190
+    "lng": 84.906190,
+    "label": "SSB Hall"
   },
   {
     "filename": "example2.jpg",
     "lat": 22.252436, 
-    "lng": 84.910392
+    "lng": 84.910392,
+    "label": "VS Hall Gym"
   },
   {
     "filename": "example3.jpg",
     "lat": 22.249812, 
-    "lng": 84.894542
+    "lng": 84.894542,
+    "label": "Main Gate"
   },
   {
     "filename": "example4.jpg",
     "lat": 22.254574548241838, 
-    "lng": 84.90515461711333
+    "lng": 84.90515461711333,
+    "label": "Swimming Pool"
   },
   {
     "filename": "example5.jpg",
     "lat": 22.252114573021736,
-    "lng": 84.90022565420229
+    "lng": 84.90022565420229,
+    "label": "CSE Dept."
   },
   {
     "filename": "example6.jpg",
     "lat": 22.25334111501857, 
-    "lng": 84.90391120213312
+    "lng": 84.90391120213312,
+    "label": "Engine"
   },
   {
     "filename": "example7.jpg",
     "lat": 22.251762967236775, 
-    "lng": 84.8991092546622
+    "lng": 84.8991092546622,
+    "label": "Temple"
   },
   {
     "filename": "example8.jpg",
     "lat": 22.252180085310957, 
-    "lng": 84.89869069996848
+    "lng": 84.89869069996848,
+    "label": "Guest House"
   }
 ]
+
 
