@@ -9,87 +9,6 @@ function shuffle(arr){
   return arr;
 }
 
-/* -------- Leaderboard: fetch + render (top N) -------- */
-
-const leaderboardList = document.getElementById('leaderboardList');
-const lbUpdatedSpan = document.getElementById('lbUpdated');
-const LB_REFRESH_MS = 30_000; // auto-refresh every 30s
-const LB_MAX = 10; // show top 5 or top 10 — change to 5 to show top 5
-
-async function fetchTopScores(){
-  try{
-    const res = await fetch('/scores');
-    if(!res.ok) throw new Error('Failed fetching scores');
-    const data = await res.json();
-    return Array.isArray(data) ? data : [];
-  }catch(err){
-    console.warn('Leaderboard fetch error:', err);
-    return null;
-  }
-}
-
-function renderLeaderboardPanel(data){
-  // data is an array of { name, score, date }
-  leaderboardList.innerHTML = '';
-  if(!data || data.length === 0){
-    leaderboardList.innerHTML = '<li class="lb-empty">No scores yet — be the first!</li>';
-    lbUpdatedSpan.textContent = new Date().toLocaleTimeString();
-    return;
-  }
-
-  const top = data.slice(0, LB_MAX);
-  top.forEach((row, idx) => {
-    const li = document.createElement('li');
-
-    const nameSpan = document.createElement('span');
-    nameSpan.className = 'lb-name';
-    nameSpan.textContent = `${row.name || 'Anonymous'}`;
-
-    const scoreSpan = document.createElement('span');
-    scoreSpan.className = 'lb-score';
-    scoreSpan.textContent = `${row.score}`;
-
-    const metaSpan = document.createElement('div');
-    metaSpan.style.fontSize = '11px';
-    metaSpan.style.color = '#8b8f98';
-    metaSpan.textContent = new Date(row.date).toLocaleDateString();
-
-    const leftDiv = document.createElement('div');
-    leftDiv.style.display = 'flex';
-    leftDiv.style.flexDirection = 'column';
-    leftDiv.style.gap = '2px';
-    leftDiv.appendChild(nameSpan);
-    leftDiv.appendChild(metaSpan);
-
-    li.appendChild(leftDiv);
-    li.appendChild(scoreSpan);
-
-    leaderboardList.appendChild(li);
-  });
-
-  lbUpdatedSpan.textContent = new Date().toLocaleTimeString();
-}
-
-/* Combined refresh function */
-async function refreshLeaderboard(){
-  const data = await fetchTopScores();
-  if(data === null){
-    leaderboardList.innerHTML = '<li class="lb-empty">Failed to load leaderboard</li>';
-    return;
-  }
-  // server already returns sorted (server.js sorts by score desc); still ensure
-  data.sort((a,b) => b.score - a.score);
-  renderLeaderboardPanel(data);
-  // Also update any other leaderboard UI you have (e.g., bottom footer)
-  if(typeof renderTopScores === 'function'){
-    renderTopScores(data); // keep existing footer list in sync
-  }
-}
-
-/* Auto-refresh and initial load */
-refreshLeaderboard();
-setInterval(refreshLeaderboard, LB_REFRESH_MS);
-
 
 function haversineDistance(lat1, lon1, lat2, lon2){
   const R = 6371e3; // meters
@@ -321,4 +240,5 @@ function renderTopScores(data){
 
 /* initial load */
 loadImages();
+
 
