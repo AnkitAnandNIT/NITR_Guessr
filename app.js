@@ -169,7 +169,7 @@ submitGuessBtn.addEventListener('click', function(){
   // small delay then move to next round
   setTimeout(()=>{
     nextRound();
-  }, 1800);
+  }, 3000);
 });
 
 /* Skip handler - treat as 0 points but reveal actual location */
@@ -209,5 +209,6 @@ playAgainBtn.addEventListener('click', function(){
 
 /* initial load */
 loadImages();
+
 
 
