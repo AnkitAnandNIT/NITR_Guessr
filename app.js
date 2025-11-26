@@ -202,29 +202,7 @@ playAgainBtn.addEventListener('click', function(){
 });
 
 /* Save score to backend */
-saveScoreBtn.addEventListener('click', function(){
-  const name = (playerNameInput.value || 'Anonymous').trim();
-  if(!name){
-    alert('Enter a name or type Anonymous.');
-    return;
-  }
-  const payload = { name, score: totalScore, date: new Date().toISOString() };
-  fetch('/scores', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
-  }).then(r=>{
-    if(!r.ok) throw new Error('Saving failed');
-    return r.json();
-  }).then(data=>{
-    alert('Saved to leaderboard!');
-    playerNameInput.value = '';
-    renderTopScores(data);
-  }).catch(err=>{
-    console.error(err);
-    alert('Failed saving score. Check server.');
-  });
-});
+
 
 /* render top scores */
 function renderTopScores(data){
@@ -239,3 +217,4 @@ function renderTopScores(data){
 
 /* initial load */
 loadImages();
+
