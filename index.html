@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NITR GeoGuess — Campus Edition</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="container">
+    <header>
+      <h1>NITR GeoGuess — Campus Edition</h1>
+      <div id="scoreboard">Round <span id="roundNum">0</span>/5 — Score: <span id="totalScore">0</span></div>
+    </header>
+
+    <main>
+      <section id="left">
+        <div id="imageWrap">
+          <img id="currentImage" src="" alt="location photo" />
+        </div>
+
+        <div id="controls">
+          <button id="submitGuess" disabled>Submit Guess</button>
+          <button id="skipBtn">Skip</button>
+          <div id="lastResult"></div>
+        </div>
+      </section>
+
+      <section id="right">
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <footer id="gameEnd" class="hidden">
+      <div id="finalSummary"></div>
+      <div id="leaderboardForm">
+        <input id="playerName" placeholder="Enter name for leaderboard" maxlength="32" />
+        <button id="saveScoreBtn">Save Score</button>
+      </div>
+      <div id="topScoresWrap">
+        <h3>Top Scores</h3>
+        <ol id="topScores"></ol>
+      </div>
+      <button id="playAgain">Play Again</button>
+    </footer>
+  </div>
+
+  <!-- Leaflet JS -->
+  <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-C6X7kP0tF+ZkQxg9y2kXx3u5pQ0P7wGm5c6qYp+K5gU=" crossorigin=""></script>    -->
+
+  <script src="app.js"></script>
+</body>
+</html>
