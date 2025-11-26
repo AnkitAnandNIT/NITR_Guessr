@@ -35,6 +35,20 @@
 
       <section id="right">
         <div id="map"></div>
+        <!-- Leaderboard panel (place directly under or next to the #map) -->
+<aside id="leaderboardPanel" aria-label="Top scores">
+  <div class="lb-header">
+    <h3>Top Scores</h3>
+    <div class="lb-sub">Top 10</div>
+  </div>
+  <ol id="leaderboardList" class="lb-list">
+    <li class="lb-empty">Loading...</li>
+  </ol>
+  <div class="lb-footer">
+    <small>Updated: <span id="lbUpdated">—</span></small>
+  </div>
+</aside>
+
       </section>
     </main>
 
@@ -59,3 +73,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
