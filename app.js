@@ -9,7 +9,6 @@ function shuffle(arr){
   return arr;
 }
 
-
 function haversineDistance(lat1, lon1, lat2, lon2){
   const R = 6371e3; // meters
   const φ1 = lat1 * Math.PI/180;
@@ -48,7 +47,7 @@ const topScoresList = document.getElementById('topScores');
 let imageList = [];
 let gameImages = [];
 const totalRounds = 5;
-let currentRound = 1;
+let currentRound = 0;
 let totalScore = 0;
 let userMarker = null;
 let actualMarker = null;
@@ -240,6 +239,3 @@ function renderTopScores(data){
 
 /* initial load */
 loadImages();
-
-
-
