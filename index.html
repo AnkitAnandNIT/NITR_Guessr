@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NITR GeoGuessr — Campus Edition</title>
+  <title>NITR GeoGuess — Campus Edition</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet"
@@ -40,6 +40,14 @@
 
     <footer id="gameEnd" class="hidden">
       <div id="finalSummary"></div>
+      <div id="leaderboardForm">
+        <input id="playerName" placeholder="Enter name for leaderboard" maxlength="32" />
+        <button id="saveScoreBtn">Save Score</button>
+      </div>
+      <div id="topScoresWrap">
+        <h3>Top Scores</h3>
+        <ol id="topScores"></ol>
+      </div>
       <button id="playAgain">Play Again</button>
     </footer>
   </div>
@@ -51,4 +59,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
