@@ -188,12 +188,7 @@ skipBtn.addEventListener('click', function(){
 function endGame(){
   finalSummary.innerHTML = `Game over — your total score: <strong>${totalScore}</strong> (5 rounds)`;
   gameEndFooter.classList.remove('hidden');
-  // load leaderboard
-  fetch('/scores').then(r => r.json()).then(data => {
-    renderTopScores(data);
-  }).catch(err=>{
-    console.warn('Could not fetch top scores', err);
-  });
+  
 }
 
 /* Play again */
@@ -201,41 +196,8 @@ playAgainBtn.addEventListener('click', function(){
   startGame();
 });
 
-/* Save score to backend */
-saveScoreBtn.addEventListener('click', function(){
-  const name = (playerNameInput.value || 'Anonymous').trim();
-  if(!name){
-    alert('Enter a name or type Anonymous.');
-    return;
-  }
-  const payload = { name, score: totalScore, date: new Date().toISOString() };
-  fetch('/scores', {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
-  }).then(r=>{
-    if(!r.ok) throw new Error('Saving failed');
-    return r.json();
-  }).then(data=>{
-    alert('Saved to leaderboard!');
-    playerNameInput.value = '';
-    renderTopScores(data);
-  }).catch(err=>{
-    console.error(err);
-    alert('Failed saving score. Check server.');
-  });
-});
 
-/* render top scores */
-function renderTopScores(data){
-  topScoresList.innerHTML = '';
-  if(!Array.isArray(data)) return;
-  data.slice(0,10).forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.name} — ${item.score} pts (${new Date(item.date).toLocaleDateString()})`;
-    topScoresList.appendChild(li);
-  });
-}
 
 /* initial load */
 loadImages();
+
