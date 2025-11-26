@@ -205,16 +205,9 @@ playAgainBtn.addEventListener('click', function(){
 
 
 /* render top scores */
-function renderTopScores(data){
-  topScoresList.innerHTML = '';
-  if(!Array.isArray(data)) return;
-  data.slice(0,10).forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.name} — ${item.score} pts (${new Date(item.date).toLocaleDateString()})`;
-    topScoresList.appendChild(li);
-  });
-}
+
 
 /* initial load */
 loadImages();
+
 
