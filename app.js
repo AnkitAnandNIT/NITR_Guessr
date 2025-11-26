@@ -48,7 +48,7 @@ const topScoresList = document.getElementById('topScores');
 let imageList = [];
 let gameImages = [];
 const totalRounds = 5;
-let currentRound = 0;
+let currentRound = 1;
 let totalScore = 0;
 let userMarker = null;
 let actualMarker = null;
@@ -240,5 +240,6 @@ function renderTopScores(data){
 
 /* initial load */
 loadImages();
+
 
 
