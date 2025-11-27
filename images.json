@@ -52,8 +52,45 @@
     "lat": 22.254499855785852, 
     "lng": 84.90825076531173,
     "label": "Dominos"
+  },
+  {
+    "filename": "example10.jpg",
+    "lat": 22.25120276249672, 
+    "lng": 84.90497222022731 ,
+    "label": "LA1 Top Floor"
+  },
+  {
+    "filename": "example11.jpg",
+    "lat": 22.250705031795004,
+    "lng": 84.90994678491805,
+    "label": "Behind VS"
+  },
+  {
+    "filename": "example12.jpg",
+    "lat": 22.251233795421655,  
+    "lng": 84.90339838760694,
+    "label": "Behind Golden Jubilee"
+  },
+  {
+    "filename": "example13.jpg",
+    "lat": 22.252011643752173, 
+    "lng": 84.90295825915469,
+    "label": "Golden Jubilee Street"
+  },
+  {
+    "filename": "example14.jpg",
+    "lat": 22.252036239100615, 
+    "lng": 84.90463280763501,
+    "label": "LA Garden"
+  },
+  {
+    "filename": "example15.jpg",
+    "lat": 22.25367103778149, 
+    "lng": 84.90110520052703,
+    "label": "Main Building"
   }
 ]
+
 
 
 
